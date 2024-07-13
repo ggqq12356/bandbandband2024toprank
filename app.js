@@ -1,7 +1,9 @@
 ﻿var rankList = null
 
+const host = "https://peat-sun-countess.glitch.me"
+
 const getTopRank = (rankType) => {
-  fetch(`/top/${rankType}`)
+  fetch(host + `/top/${rankType}`)
     .then(res => res.json())
     .then(res => {
       rankList = res
