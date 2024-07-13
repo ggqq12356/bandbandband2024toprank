@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/top/*"
-  to = "https://peat-sun-countess.glitch.me/top/"
+  from = "/top/band"
+  to = "https://peat-sun-countess.glitch.me/top/band"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
