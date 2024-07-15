@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-tw">
 
 <head>
@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>一起聽團吧!人氣投票排行榜!</title>
   <link rel="icon" type="image/x-icon" href="./favicon.png">
-  
+
   <!-- lib -->
   <!-- bootstrap -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css' />
@@ -23,18 +23,18 @@
 
 <body class="text-white bg-dark">
   <div id="app" class="container">
-    <div id="header" class="text-center mt-2 mb-2">
-      <h1>一起聽團吧</h1>
+    <div id="header" class="d-flex flex-column justify-content-center align-items-center">
+      <h1 class="mt-2">一起聽團吧</h1>
       <h2>人氣投票排行榜</h2>
-    </div>
-    <div id="buttonGroup" class="text-center mt-2 mb-2">
-      <button class="btn btn-primary btn-top mt-2" id="topBand">最佳樂團</button>
-      <button class="btn btn-secondary btn-top mt-2" id="topVocalist">最佳主唱</button>
-      <button class="btn btn-secondary btn-top mt-2" id="topGuitarist">最佳吉他</button>
-      <button class="btn btn-secondary btn-top mt-2" id="topBassist">最佳貝斯</button>
-      <button class="btn btn-secondary btn-top mt-2" id="topDrummer">最佳鼓手</button>
-      <button class="btn btn-secondary btn-top mt-2" id="topKeyboard">最佳鍵盤</button>
-      <button class="btn btn-secondary btn-top mt-2" id="topPlayer">最佳演奏樂手</button>
+      <div id="buttonGroup" class="text-center mb-2">
+        <button class="btn btn-primary btn-top mt-2" id="topBand">最佳樂團</button>
+        <button class="btn btn-secondary btn-top mt-2" id="topVocalist">最佳主唱</button>
+        <button class="btn btn-secondary btn-top mt-2" id="topGuitarist">最佳吉他</button>
+        <button class="btn btn-secondary btn-top mt-2" id="topBassist">最佳貝斯</button>
+        <button class="btn btn-secondary btn-top mt-2" id="topDrummer">最佳鼓手</button>
+        <button class="btn btn-secondary btn-top mt-2" id="topKeyboard">最佳鍵盤</button>
+        <button class="btn btn-secondary btn-top mt-2" id="topPlayer">最佳演奏樂手</button>
+      </div>
     </div>
     <div id="main" class="d-flex flex-row justify-content-center align-items-center">
       <div id="rankList" class="d-flex flex-column justify-content-center align-items-center"></div>
