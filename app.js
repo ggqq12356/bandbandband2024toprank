@@ -17,7 +17,7 @@ const btnSelect = (btn) => {
   })
   btn.target.classList.remove("btn-secondary")
   btn.target.classList.add("btn-primary")
-  scrollTo(0, 0)
+  // scrollTo(0, 0)
 }
 
 const showVideo = (id) => {
