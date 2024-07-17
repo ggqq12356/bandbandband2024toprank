@@ -120,7 +120,6 @@ const showRank = () => {
         </div>
       </div>
     </div>
-    ${rank != 32 ? `<hr style="border: 1px solid white; width: 100%;">` : ""}
     `
     rankListDOM.appendChild(div)
   })
