@@ -2,6 +2,7 @@ const host = "https://peat-sun-countess.glitch.me"
 var rankList = null
 
 const getTopRank = (rankType) => {
+  clearRank()
   fetch(host + `/top/${rankType}`)
     .then(res => res.json())
     .then(res => {
@@ -72,13 +73,22 @@ const showImage = (id) => {
   })
 }
 
-const showRank = () => {
+const clearRank = () => {
   let rankListDOM = document.querySelector("#rankList")
 
   // clearRankTable
   while (rankListDOM.firstElementChild) {
     rankListDOM.firstElementChild.remove()
   }
+
+  let div = document.createElement("div")
+  div.innerText = "載入中請稍後…"
+
+  rankListDOM.appendChild(div)
+}
+
+const showRank = () => {
+  let rankListDOM = document.querySelector("#rankList")
 
   rankList.forEach(band => {
     let id = band.id
@@ -126,13 +136,13 @@ const showRank = () => {
 }
 
 const eventBind = () => {
-  document.querySelector("#topBand").addEventListener("click", (btn) => { btnSelect(btn), getTopRank("band") })
-  document.querySelector("#topVocalist").addEventListener("click", (btn) => { btnSelect(btn), getTopRank("vocal") })
-  document.querySelector("#topGuitarist").addEventListener("click", (btn) => { btnSelect(btn), getTopRank("guitar") })
-  document.querySelector("#topBassist").addEventListener("click", (btn) => { btnSelect(btn), getTopRank("bass") })
-  document.querySelector("#topDrummer").addEventListener("click", (btn) => { btnSelect(btn), getTopRank("drum") })
-  document.querySelector("#topKeyboard").addEventListener("click", (btn) => { btnSelect(btn), getTopRank("keyboard") })
-  document.querySelector("#topPlayer").addEventListener("click", (btn) => { btnSelect(btn), getTopRank("player") })
+  document.querySelectorAll(".btn-top").forEach((btn) => {
+    btn.addEventListener("click", (btn) => {
+      let ranktype = btn.target.dataset['ranktype']
+      btnSelect(btn)
+      getTopRank(ranktype)
+    })
+  })
 }
 
 const main = () => {
