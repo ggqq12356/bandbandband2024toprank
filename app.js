@@ -1,6 +1,6 @@
 const host = "https://peat-sun-countess.glitch.me"
-const rankList = null
-const rankListDOM = null
+let rankList = null
+let rankListDOM = null
 
 const getTopRank = (rankType) => {
   resetRank()
