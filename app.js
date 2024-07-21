@@ -1,37 +1,67 @@
 const host = "https://peat-sun-countess.glitch.me"
 let rankList = null
 let rankListDOM = null
+let rankClass = 'top' // top, revive, final
+let rankType = 'band' // band, vocal, guitar, bass, drum, keyboard, player
 
-const getTopRank = (rankType) => {
+const getRank = (rankClass = 'top', rankType = 'band') => {
   resetRank()
-  fetch(host + `/top/${rankType}`)
+  // fetch(`/${rankClass}/${rankType}`)
+  fetch(host + `/${rankClass}/${rankType}`)
     .then(res => res.json())
     .then(res => {
-      rankList = res
+      if (!res.status) {
+        clearRank()
+        showMessage(res.message)
+        return
+      }
+      rankList = res['rank']
       clearRank()
       showRank()
     })
     .catch(err => console.log(err))
 }
 
-const btnSelect = (btn) => {
-  document.querySelectorAll(".btn-top").forEach(el => {
+const btnRankClassSelect = (btn) => {
+  document.querySelectorAll(".btn-class").forEach(el => {
     el.classList.remove("btn-primary")
     el.classList.add("btn-secondary")
   })
   btn.target.classList.remove("btn-secondary")
   btn.target.classList.add("btn-primary")
-  // scrollTo(0, 0)
 
-  let ranktype = btn.target.dataset['ranktype']
-  getTopRank(ranktype)
+  rankClass = btn.target.dataset['class']
+  rankType = 'band'
+  if (rankClass != "top") {
+    document.querySelector("#btnRankTypeGroup").style.display = "none"
+  } else {
+    document.querySelector("#btnRankTypeGroup").style.display = "block"
+  }
+  getRank(rankClass, rankType)
+}
+
+const btnRankTypeSelect = (btn) => {
+  document.querySelectorAll(".btn-type").forEach(el => {
+    el.classList.remove("btn-primary")
+    el.classList.add("btn-secondary")
+  })
+  btn.target.classList.remove("btn-secondary")
+  btn.target.classList.add("btn-primary")
+
+  rankClass = 'top'
+  rankType = btn.target.dataset['type']
+  getRank(rankClass, rankType)
+}
+
+const showMessage = (message) => {
+  let div = document.createElement("div")
+  div.innerText = message
+  rankListDOM.appendChild(div)
 }
 
 const resetRank = () => {
   clearRank()
-  let div = document.createElement("div")
-  div.innerText = "載入中請稍後…"
-  rankListDOM.appendChild(div)
+  showMessage("載入中請稍後…")
 }
 
 const clearRank = () => {
@@ -139,8 +169,12 @@ const showImage = (id) => {
 
 const init = () => {
   // btn bind
-  document.querySelectorAll(".btn-top").forEach((btn) => {
-    btn.addEventListener("click", (btn) => btnSelect(btn))
+  document.querySelectorAll(".btn-class").forEach((btn) => {
+    btn.addEventListener("click", (btn) => btnRankClassSelect(btn))
+  })
+
+  document.querySelectorAll(".btn-type").forEach((btn) => {
+    btn.addEventListener("click", (btn) => btnRankTypeSelect(btn))
   })
 
   rankListDOM = document.querySelector("#rankList")
@@ -148,7 +182,7 @@ const init = () => {
 
 const main = () => {
   init()
-  getTopRank("band")
+  getRank("top", "band")
 }
 
 document.addEventListener("DOMContentLoaded", main)
