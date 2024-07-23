@@ -60,8 +60,8 @@ const btnRankTypeReset = () => {
     el.classList.add("btn-secondary")
   })
   let btn = document.querySelectorAll(".btn-type")[0]
-  btn.target.classList.remove("btn-secondary")
-  btn.target.classList.add("btn-primary")
+  btn.classList.remove("btn-secondary")
+  btn.classList.add("btn-primary")
 }
 
 const showMessage = (message) => {
