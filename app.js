@@ -36,6 +36,7 @@ const btnRankClassSelect = (btn) => {
     document.querySelector("#btnRankTypeGroup").style.display = "none"
   } else {
     document.querySelector("#btnRankTypeGroup").style.display = "block"
+    btnRankTypeReset()
   }
   getRank(rankClass, rankType)
 }
@@ -51,6 +52,16 @@ const btnRankTypeSelect = (btn) => {
   rankClass = 'top'
   rankType = btn.target.dataset['type']
   getRank(rankClass, rankType)
+}
+
+const btnRankTypeReset = () => {
+  document.querySelectorAll(".btn-type").forEach(el => {
+    el.classList.remove("btn-primary")
+    el.classList.add("btn-secondary")
+  })
+  let btn = document.querySelectorAll(".btn-type")[0]
+  btn.target.classList.remove("btn-secondary")
+  btn.target.classList.add("btn-primary")
 }
 
 const showMessage = (message) => {
