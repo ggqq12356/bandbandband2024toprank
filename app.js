@@ -43,11 +43,11 @@ const btnRankClassSelect = (btn) => {
 
 const btnRankTypeSelect = (btn) => {
   document.querySelectorAll(".btn-type").forEach(el => {
-    el.classList.remove("btn-primary")
+    el.classList.remove("btn-warning")
     el.classList.add("btn-secondary")
   })
   btn.target.classList.remove("btn-secondary")
-  btn.target.classList.add("btn-primary")
+  btn.target.classList.add("btn-warning")
 
   rankClass = 'top'
   rankType = btn.target.dataset['type']
@@ -56,12 +56,12 @@ const btnRankTypeSelect = (btn) => {
 
 const btnRankTypeReset = () => {
   document.querySelectorAll(".btn-type").forEach(el => {
-    el.classList.remove("btn-primary")
+    el.classList.remove("btn-warning")
     el.classList.add("btn-secondary")
   })
   let btn = document.querySelectorAll(".btn-type")[0]
   btn.classList.remove("btn-secondary")
-  btn.classList.add("btn-primary")
+  btn.classList.add("btn-warning")
 }
 
 const showMessage = (message) => {
