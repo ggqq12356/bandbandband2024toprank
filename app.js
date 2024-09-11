@@ -108,12 +108,14 @@ const showRank = () => {
             <p>
               <span class="text-white">💖 ${score}</span>
             </p>
+            <!--
             <p>
               <a href="#" style="color: #01c3c5; font-size: 1rem; text-decoration: none;" onclick="showVideo('${id}')">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAUCAYAAACeXl35AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAHKADAAQAAAABAAAAFAAAAABUzb9jAAACxElEQVRIDa1UzWsTURD/zduPJM1FEPEqeqgKLQgV+5GmWr0ogmfx4E3RQ5FWQfTisQehYPHkQfAfEDwI2h5s+hXR1rNgb4InQbQas9l947xNUrLb3U1anBDevjcz7zcfv3mEtvAjheXJ47CsIhrtwz2sjtgy/0Sp9DnLi0Ll+voJ0vQYhDEEQTHLIVOn1C8iLOg6zeDc8NckW8Ji9TC5wQL6CgOo102USXa9nQka8nngT+0dW7iE0dFa3FEhH0wh5w6gJjqtm4AGdD9/42/usayzCDARBzN7m5hH4PtJuv2dmUBdaWjNPxq5oFodloQGbbD80sSUSKmm1nz3GpgB1Sz9EVldHVFQU6z5Ctx8wQZRMqABALbJDx5owg8C3UcudxINobApXZYEAYSA/Wpl9TlDXWXHycHzwnLbqX6OlMXzPujy2Lyx4cX3rxU1ppnotgAfCAmW5ixBkVL3BAhhgIaMLWnVq72NrQwt5GnaXDjzXZdGHnLgncff+hshhmQRViHm1NqaspqszNoh2YCmMHEplzd5fPQi+f609NfLBI37yr4bYIKLHEnfdbk0Bz/YCjNNtko8Te9honnrkJnUytottqwj8jJlWe7Sdcsw2gDjvrZ2ilbWX7FST6U/hXiPdhBS+tslQ3mgiJozUKkcUpYzI8ndRM7OZqlBNWRx3ebsdoxROqCZN1KnpXR3tNbbRHRXaN4fp/lORp0fMg7c8GaV5x2Usl+TMeprz68SHu5mYjtCQlEc5shxnsG2+8PZ64i2EyPyHY6M+qLHx26w9ieE0S+kUr+RLyA9wzZor89ZBFFy0Cz1FCmVPkpPrmO5+gRBbdBmQoUsa7LrcxW5MGNjyNIwA4+tiNX48IbsN6SkNA+v8QnmGfofYu7xg7fQXiXpumb/lpYGyHZfCvixvc5V5FJbOuQHm1xwL2No6FtE19r8AxKaIduL9SfrAAAAAElFTkSuQmCC">
                 花絮
               </a>
             </p>
+            -->
           </div>
           <div class="d-flex flex-column justify-content-center align-items-start">
             <span class="ms-5" style="color: #ededed; font-size: 3rem; font-weight: 700; font-style: italic;">${rank}</span>
