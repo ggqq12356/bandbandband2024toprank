@@ -118,7 +118,7 @@ const showRank = () => {
             -->
           </div>
           <div class="d-flex flex-column justify-content-center align-items-start">
-            <span class="ms-5" style="color: #ededed; font-size: 3rem; font-weight: 700; font-style: italic;">${rank}</span>
+            <span class="ms-2" style="color: #ededed; font-size: 3rem; font-weight: 700; font-style: italic;">${rank}</span>
           </div>
         </div>
       </div>
