@@ -106,7 +106,7 @@ const showRank = () => {
         <div class="d-flex flex-row justify-content-start align-items-center ms-2">
           <div class="d-flex flex-column justify-content-center align-items-start">
             <p>
-              <span class="text-white">💖 ${score}</span>
+              <h5 class="text-white">💖 ${score}</h5>
             </p>
             <!--
             <p>
