@@ -8,7 +8,7 @@ let rankData = {}
 
 const getData = () => {
   return new Promise((resolve, reject) => {
-    fetch(`/static/data.json`)
+    fetch(`/data.json`)
       .then(res => res.json())
       .then(res => {
         console.log(res)
